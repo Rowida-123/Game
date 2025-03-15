@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Food!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎵 Click to Make It Dance! 🕺</h1>
+        
+        <button class="dance-btn" onclick="showDance()">💃 Start Dancing!</button>
+        
+        <div id="dance-area" class="hidden">
+            <img id="dance-gif" src="" alt="Dancing Food" class="dance-gif">
+            <audio id="dance-song" controls>
+                <source id="song-source" src="" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <br>
+        <button class="back-btn" onclick="goBack()">⬅️ Back to Fridge</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const food = urlParams.get('food');
+
+        const foodData = {
+            potato: {
+                gif: "https://media.giphy.com/media/Y1sZGMVPFJZ9SljdTG/giphy.gif",
+                song: "assets/potato.mp3"
+            },
+            carrot: {
+                gif: "https://media.giphy.com/media/3oEduKqGQbxyReP3Ta/giphy.gif",
+                song: "assets/carrot.mp3"
+            },
+            pepper: {
+                gif: "https://media.giphy.com/media/3ov9jExd1E9wfpSKQk/giphy.gif",
+                song: "assets/pepper.mp3"
+            }
+        };
+
+        function showDance() {
+            if (foodData[food]) {
+                document.getElementById("dance-gif").src = foodData[food].gif;
+                document.getElementById("song-source").src = foodData[food].song;
+                document.getElementById("dance-song").load();
+                document.getElementById("dance-song").play();
+                document.getElementById("dance-area").classList.remove("hidden");
+            }
+        }
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

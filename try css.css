@@ -1,0 +1,129 @@
+/* === General Styles === */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #33ccff);
+    background-size: 400% 400%;
+    animation: bgAnimation 6s infinite alternate;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#gif-1, #gif-2, #gif-3 {
+    display: none;
+    width: 200px;
+}
+
+/* Background Animation */
+@keyframes bgAnimation {
+    from { background-position: left; }
+    to { background-position: right; }
+}
+
+/* Main Container */
+.container {
+    padding: 20px;
+}
+
+/* === Main Page (Fridge) === */
+.fridge-img {
+    width: 300px;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+.fridge-img:hover {
+    transform: scale(1.05);
+}
+
+/* Food Buttons */
+.food-buttons {
+    margin-top: 20px;
+}
+
+.food-btn {
+    font-size: 22px;
+    padding: 15px 40px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: inline-block;
+}
+
+/* Button Colors */
+.potato { background-color: #d4a373; color: white; }
+.carrot { background-color: #ff8800; color: white; }
+.pepper { background-color: #ff3333; color: white; }
+
+.food-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* === Dance Page === */
+.dance-btn {
+    font-size: 24px;
+    padding: 15px 40px;
+    margin-top: 20px;
+    background-color: #00cc99;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.dance-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Hidden at Start */
+.hidden {
+    display: none;
+}
+
+/* Dancing GIF */
+.dance-gif {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+    animation: danceMove 1s infinite alternate ease-in-out;
+}
+
+/* Dance Animation */
+@keyframes danceMove {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+
+/* Audio Player */
+audio {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Back Button */
+.back-btn {
+    font-size: 18px;
+    padding: 12px 30px;
+    margin-top: 20px;
+    background-color: white;
+    color: #222;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.back-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Fridge Apocalypse</title>
+    <link rel="stylesheet" href="try css.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🥶 chose your dancing vegetable! 💃</h1>
+        <img src="fridge-removebg-preview.png" alt="Fridge" class="fridge-img">
+        
+        <div class="food-buttons">
+            <button class="food-btn potato" onclick="playSound(); showGIF('gif-1')">🥔 Potato</button>
+            <img id="gif-1" src="potato.gif" alt="GIF" style="display: none;">
+            
+            <button class="food-btn carrot" onclick="playSound(); showGIF('gif-2')">🥕 Carrot</button>
+            <img id="gif-2" src="carrot.gif" alt="GIF" style="display: none;">
+            
+            <button class="food-btn onion" onclick="playSound(); showGIF('gif-3')">🌶️ onion</button>
+            <img id="gif-3" src="onion.gif" alt="GIF" style="display: none;">
+        </div>
+    </div>
+
+    <!-- Audio element (hidden) -->
+    <audio id="song">
+        <source src="honey.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playSound() {
+            var audio = document.getElementById("song");
+            audio.play();
+        }
+
+        function showGIF(gifId) {
+            document.getElementById(gifId).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
